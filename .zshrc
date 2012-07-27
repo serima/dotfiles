@@ -60,7 +60,11 @@ alias rr="rm -rf"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
-alias ls="ls --color=auto"
+if [ $(uname) = 'Darwin' ]; then
+	alias ls='ls -G'
+else
+	alias ls='ls -color=auto'
+fi
 alias scrls='screen -ls'
 alias scrr='screen -r'
 alias scrd='screen -d'
