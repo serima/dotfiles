@@ -61,6 +61,7 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 if [ $(uname) = 'Darwin' ]; then
+	export LSCOLORS=gxfxcxdxbxegedabagacad
 	alias ls='ls -G'
 else
 	alias ls='ls -color=auto'
