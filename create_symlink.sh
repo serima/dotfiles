@@ -13,3 +13,8 @@ for dotfile in .?*; do
 			;;
 	esac
 done
+
+cd
+mkdir tmp
+touch tmp/yanktmp
+chmod -R 777 tmp
