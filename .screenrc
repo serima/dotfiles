@@ -2,7 +2,8 @@ escape ^Tt
 defscrollback 4096
 autodetach on
 hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %100=%-8=%c:%s"
-termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+term screen-256color
 startup_message off
 defshell /bin/zsh
 bind r eval 'echo "Resize window"' 'command -c resize'
