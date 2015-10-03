@@ -71,3 +71,6 @@ alias scrr='screen -r'
 alias scrd='screen -d'
 alias scr='screen'
 alias vi='vim'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

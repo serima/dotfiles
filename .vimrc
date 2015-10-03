@@ -188,7 +188,7 @@ endif
 map <silent> sy :call YanktmpYank()<cr>
 map <silent> sp :call YanktmpPaste_p()<cr>
 map <silent> sP :call YanktmpPaste_P()<cr> 
-let g:yanktmp_file = '/home/serima/tmp/yanktmp'
+"let g:yanktmp_file = '/home/serima/tmp/yanktmp'
 
 "php syntax check
 ":make
@@ -199,10 +199,6 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 nmap <C-e><C-r> :r ~/error_log.php<CR>
 "現在編集しているファイルのフルパスを表示
 nmap <C-p><C-w><C-d> :echo expand("%:p")<CR> 
-
-" pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 " VCSCommand
 noremap <Space>s <C-w>o:VCSVimDiff<CR><C-w>p<
@@ -254,3 +250,30 @@ function! s:unite_my_settings()
   nmap <silent><buffer> <ESC><ESC> q
   imap <silent><buffer> <ESC><ESC> <ESC>q
 endfunction
+
+" neobundle
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
+
+   " Required:
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'rtakasuke/yanktmp.vim'
+NeoBundle 'grep.vim'
+
+call neobundle#end()
+
+filetype plugin indent on
