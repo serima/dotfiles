@@ -38,3 +38,5 @@
     dw = diff --word-diff
     dc = diff --cached
     wc = whatchanged
+[interactive]
+	singlekey = true
