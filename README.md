@@ -1,7 +1,6 @@
-## dotfiles for me
-You need to prepare for .gitconfig before git clone.
+# dotfiles for me
 
-### How to use
+### Setup
 
 ```
 $ cd some/local/directory
