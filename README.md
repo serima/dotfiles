@@ -73,6 +73,7 @@
 * BetterTouchTool
 * VirtualBox
 * Vagrant
+* Sequel Pro
 
 ## Software settings
 
