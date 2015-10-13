@@ -136,4 +136,9 @@ Screen version 4.03.00 (GNU) 27-May-15
 $ cd
 $ git clone git://github.com/serima/dotfiles.git 
 $ bash ./dotfiles/create_symlink.sh
+$ cd dotfiles
+$ git submodule init
+$ git submodule update
+$ vim
+(open vim and type :NeoBundleInstall to retrieve plugins)
 ```
