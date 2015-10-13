@@ -48,6 +48,7 @@
 * The Unarchiver
 * Skitch
 * Growl
+* CotEditor
 
 ### via Browser
 
@@ -80,12 +81,10 @@
 
 ### iTerm2
 
-## 鍵の設置
+#### 鍵の設置
 
-## dotfiles setup
+#### dotfiles
 
 ```
-$ cd some/local/directory
-$ git clone git://github.com/serima/dotfiles.git
-$ ./dotfiles/create_symlink.sh
+$ cd && git clone git://github.com/serima/dotfiles.git && ./dotfiles/create_symlink.sh
 ```
