@@ -81,6 +81,10 @@
 * 環境設定 -> 一般 -> 新規 Finder ウィンドウで次を表示を変更
 * 環境設定 -> サイドバー -> r_shibayama などホームディレクトリを表示するように変更
 
+### BetterTouchTool
+
+* http://ryomac.blog.fc2.com/blog-entry-89.html
+
 ### Alfred
 
 * Hotkey を Cmd + Space に変更
