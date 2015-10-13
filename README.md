@@ -64,6 +64,7 @@
 * MacZip4Win
 * Karabiner
 * Google 日本語入力
+* PHPStorm
 * VirtualBox
 * Vagrant
 
