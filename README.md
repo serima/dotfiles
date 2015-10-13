@@ -29,7 +29,12 @@
 	* 大文字小文字記号数字を含む必要がある
 
 ## Change Dock Position
+
 * システム環境設定 -> Dock -> 画面上の位置 : 左
+
+## Setting Hot Corner
+
+* システム環境設定 -> Mission Control -> ホットコーナー -> 右上 : デスクトップ
 
 ## Install
 
@@ -81,10 +86,54 @@
 
 ### iTerm2
 
-#### 鍵の設置
+## Setup Development Environment
 
-#### dotfiles
+### 鍵の設置
 
 ```
-$ cd && git clone git://github.com/serima/dotfiles.git && ./dotfiles/create_symlink.sh
+$ mkdir ~/.ssh
+$ mv ~/Desktop/id_rsa* ~/.ssh
+```
+
+### Xcode
+
+* 起動させ、Agree だけしておく
+
+### Install Command Line Tools
+
+```
+$ xcode-select --install
+```
+
+### Install Homebrew
+
+```
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Install zsh
+
+```
+$ brew install zsh
+```
+
+* Next step : http://qiita.com/nenokido2000/items/763a4af5c161ff5ede68
+
+### Install screen
+
+```
+$ brew tap homebrew/dupes
+$ brew install screen
+$ ln -s /usr/local/Cellar/screen/4.3.0/bin/screen screen
+$ rehash
+$ screen -v
+Screen version 4.03.00 (GNU) 27-May-15
+```
+
+### dotfiles
+
+```
+$ cd
+$ git clone git://github.com/serima/dotfiles.git 
+$ bash ./dotfiles/create_symlink.sh
 ```
