@@ -64,6 +64,8 @@
 * MacZip4Win
 * Karabiner
 * Google 日本語入力
+* VirtualBox
+* Vagrant
 
 ## Software settings
 
@@ -85,6 +87,10 @@
 	* Key Rpeat : 15ms
 
 ### iTerm2
+
+* 事前に Ricty をインストールしておく必要がある
+* Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
+* Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
 
 ## Setup Development Environment
 
@@ -128,6 +134,20 @@ $ ln -s /usr/local/Cellar/screen/4.3.0/bin/screen screen
 $ rehash
 $ screen -v
 Screen version 4.03.00 (GNU) 27-May-15
+```
+
+### Install Ricty
+
+```
+$ brew tap sanemat/font
+$ brew install Caskroom/cask/xquartz
+$ brew install ricty
+```
+
+#### for external display
+
+```
+$ defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
 ```
 
 ### dotfiles
