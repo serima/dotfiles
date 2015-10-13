@@ -93,6 +93,15 @@
 * Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
 * Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
 
+### PHPStorm
+
+* Preference -> Appearance & Behavior -> Appearance -> UI Options -> Theme: Darcula
+* Preference -> Editor -> Colors & Fonts -> Font -> Scheme
+	* Monokai を Save As して Monokai Copy にする
+	* Primary font を Ricty に変更
+* Preference -> Plugins -> IdeaVIM
+* Preference -> Editor -> Appearance -> Show line numbers をオンに
+
 ## Setup Development Environment
 
 ### 鍵の設置
