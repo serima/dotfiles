@@ -36,6 +36,10 @@
 
 * システム環境設定 -> Mission Control -> ホットコーナー -> 右上 : デスクトップ
 
+## Setting Spotlight
+
+* Spotlight は使用しないので、すべてチェックを外す
+
 ## Install
 
 ### via App Store
@@ -69,6 +73,11 @@
 * Vagrant
 
 ## Software settings
+
+### Finder
+
+* 環境設定 -> 一般 -> 新規 Finder ウィンドウで次を表示を変更
+* 環境設定 -> サイドバー -> r_shibayama などホームディレクトリを表示するように変更
 
 ### Alfred
 
