@@ -171,6 +171,8 @@ $ brew install ghq
 $ git config --global ghq.root ~/src
 ```
 
+* See also http://qiita.com/ysk_1031/items/8cde9ce8b4d0870a129d
+
 ### Install screen
 
 ```
