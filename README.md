@@ -151,6 +151,12 @@ $ brew install zsh
 
 * Next step : http://qiita.com/nenokido2000/items/763a4af5c161ff5ede68
 
+### Install golang
+
+```
+$ brew install go
+```
+
 ### Install screen
 
 ```
