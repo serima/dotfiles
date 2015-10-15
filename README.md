@@ -157,6 +157,20 @@ $ brew install zsh
 $ brew install go
 ```
 
+* `.zshrc` に `GOPATH=~` と定義してある
+
+### Install ghq + peco
+
+```
+$ brew tap peco/peco
+$ brew install peco
+
+$ brew tap motemen/ghq
+$ brew install ghq
+
+$ git config --global ghq.root ~/src
+```
+
 ### Install screen
 
 ```
