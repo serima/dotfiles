@@ -29,7 +29,17 @@
 	* 大文字小文字記号数字を含む必要がある
 
 ## Change Dock Position
+
 * システム環境設定 -> Dock -> 画面上の位置 : 左
+* システム環境設定 -> Dock -> Dock を自動的に隠す／表示
+
+## Setting Hot Corner
+
+* システム環境設定 -> Mission Control -> ホットコーナー -> 右上 : デスクトップ
+
+## Setting Spotlight
+
+* Spotlight は使用しないので、すべてチェックを外す
 
 ## Install
 
@@ -59,8 +69,22 @@
 * MacZip4Win
 * Karabiner
 * Google 日本語入力
+* PHPStorm
+* BetterTouchTool
+* VirtualBox
+* Vagrant
+* Sequel Pro
 
 ## Software settings
+
+### Finder
+
+* 環境設定 -> 一般 -> 新規 Finder ウィンドウで次を表示を変更
+* 環境設定 -> サイドバー -> r_shibayama などホームディレクトリを表示するように変更
+
+### BetterTouchTool
+
+* http://ryomac.blog.fc2.com/blog-entry-89.html
 
 ### Alfred
 
@@ -81,10 +105,92 @@
 
 ### iTerm2
 
-#### 鍵の設置
+* 事前に Ricty をインストールしておく必要がある
+* Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
+* Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
 
-#### dotfiles
+### PHPStorm
+
+* Preference -> Appearance & Behavior -> Appearance -> UI Options -> Theme: Darcula
+* Preference -> Editor -> Colors & Fonts -> Font -> Scheme
+	* Monokai を Save As して Monokai Copy にする
+	* Primary font を Ricty に変更
+* Preference -> Plugins -> IdeaVIM
+* Preference -> Editor -> Appearance -> Show line numbers をオンに
+
+## Setup Development Environment
+
+### 鍵の設置
 
 ```
-$ cd && git clone git://github.com/serima/dotfiles.git && ./dotfiles/create_symlink.sh
+$ mkdir ~/.ssh
+$ mv ~/Desktop/id_rsa* ~/.ssh
+```
+
+### Xcode
+
+* 起動させ、Agree だけしておく
+
+### Install Command Line Tools
+
+```
+$ xcode-select --install
+```
+
+### Install Homebrew
+
+```
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Install zsh
+
+```
+$ brew install zsh
+```
+
+* Next step : http://qiita.com/nenokido2000/items/763a4af5c161ff5ede68
+
+### Install golang
+
+```
+$ brew install go
+```
+
+### Install screen
+
+```
+$ brew tap homebrew/dupes
+$ brew install screen
+$ ln -s /usr/local/Cellar/screen/4.3.0/bin/screen screen
+$ rehash
+$ screen -v
+Screen version 4.03.00 (GNU) 27-May-15
+```
+
+### Install Ricty
+
+```
+$ brew tap sanemat/font
+$ brew install Caskroom/cask/xquartz
+$ brew install ricty
+```
+
+#### for external display
+
+```
+$ defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
+```
+
+### dotfiles
+
+```
+$ cd
+$ git clone git://github.com/serima/dotfiles.git 
+$ bash ./dotfiles/create_symlink.sh
+$ cd dotfiles
+$ git submodule init
+$ git submodule update
+$ vim
+(open vim and type :NeoBundleInstall to retrieve plugins)
 ```
