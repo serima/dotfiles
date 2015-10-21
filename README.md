@@ -157,6 +157,12 @@ $ brew install zsh
 $ brew install go
 ```
 
+### Install q
+
+```
+$ brew install q
+```
+
 * `.zshrc` に `GOPATH=~` と定義してある
 
 ### Install ghq + peco
