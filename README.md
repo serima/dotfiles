@@ -84,6 +84,7 @@
 
 ### BetterTouchTool
 
+* Basic Settings -> Launch BetterTouchTool on startup
 * http://ryomac.blog.fc2.com/blog-entry-89.html
 
 ### Alfred
