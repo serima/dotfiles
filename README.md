@@ -109,6 +109,7 @@
 * 事前に Ricty をインストールしておく必要がある
 * Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
 * Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
+* Preference -> Terminal -> Notifications -> Scilence bell をオンに
 
 ### PHPStorm
 
