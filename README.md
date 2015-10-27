@@ -13,6 +13,8 @@
 			* 前の入力ソースを選択、入力メニューの次のソースを選択のチェックを外す
 		* Spotlight
 			* Spotlight 検索を表示のチェックを外す
+		* キーボード
+			* 次のウィンドウを操作対象にする を Ctrl + スペースに変更
 3. Setting Display
 	1. 適切な配置を設定する
 2. Setting Trackpad
