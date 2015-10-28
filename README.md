@@ -61,6 +61,7 @@
 * Skitch
 * Growl
 * CotEditor
+* Get Plain Text
 
 ### via Browser
 
