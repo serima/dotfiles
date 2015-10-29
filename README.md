@@ -13,6 +13,8 @@
 			* 前の入力ソースを選択、入力メニューの次のソースを選択のチェックを外す
 		* Spotlight
 			* Spotlight 検索を表示のチェックを外す
+		* キーボード
+			* 次のウィンドウを操作対象にする を Ctrl + スペースに変更
 3. Setting Display
 	1. 適切な配置を設定する
 2. Setting Trackpad
@@ -59,6 +61,7 @@
 * Skitch
 * Growl
 * CotEditor
+* Get Plain Text
 
 ### via Browser
 
@@ -84,6 +87,7 @@
 
 ### BetterTouchTool
 
+* Basic Settings -> Launch BetterTouchTool on startup
 * http://ryomac.blog.fc2.com/blog-entry-89.html
 
 ### Alfred
@@ -108,6 +112,7 @@
 * 事前に Ricty をインストールしておく必要がある
 * Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
 * Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
+* Preference -> Terminal -> Notifications -> Scilence bell をオンに
 
 ### PHPStorm
 
@@ -156,6 +161,28 @@ $ brew install zsh
 ```
 $ brew install go
 ```
+
+### Install q
+
+```
+$ brew install q
+```
+
+* `.zshrc` に `GOPATH=~` と定義してある
+
+### Install ghq + peco
+
+```
+$ brew tap peco/peco
+$ brew install peco
+
+$ brew tap motemen/ghq
+$ brew install ghq
+
+$ git config --global ghq.root ~/src
+```
+
+* See also http://qiita.com/ysk_1031/items/8cde9ce8b4d0870a129d
 
 ### Install screen
 
