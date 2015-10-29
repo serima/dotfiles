@@ -25,9 +25,10 @@
 [help]
     autocorrect = 0
 [alias]
+    br = branch
     co = checkout
     ce = commit -v --amend
-    st = status --branch --short
+    st = status
     si = status --ignored --short
     branches = branch -a
     remotes = remote -v
