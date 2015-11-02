@@ -41,3 +41,5 @@
     wc = whatchanged
 [interactive]
 	singlekey = true
+[ghq]
+	root = ~/src
