@@ -1,6 +1,6 @@
 " vim: set ts=4 sw=4 sts=0:
 "-----------------------------------------------------------------------------
-" Ê¸»ú¥³¡¼¥É´ØÏ¢
+" æ–‡å­—ã‚³ãƒ¼ãƒ‰é–¢é€£
 "
 if &encoding !=# 'utf-8'
 	set encoding=japan
@@ -9,16 +9,16 @@ endif
 if has('iconv')
 	let s:enc_euc = 'euc-jp'
 	let s:enc_jis = 'iso-2022-jp'
-	" iconv¤¬eucJP-ms¤ËÂĞ±ş¤·¤Æ¤¤¤ë¤«¤ò¥Á¥§¥Ã¥¯
+	" iconvãŒeucJP-msã«å¯¾å¿œã—ã¦ã„ã‚‹ã‹ã‚’ãƒã‚§ãƒƒã‚¯
 	if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
 		let s:enc_euc = 'eucjp-ms'
 		let s:enc_jis = 'iso-2022-jp-3'
-	" iconv¤¬JISX0213¤ËÂĞ±ş¤·¤Æ¤¤¤ë¤«¤ò¥Á¥§¥Ã¥¯
+	" iconvãŒJISX0213ã«å¯¾å¿œã—ã¦ã„ã‚‹ã‹ã‚’ãƒã‚§ãƒƒã‚¯
 	elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
 		let s:enc_euc = 'euc-jisx0213'
 		let s:enc_jis = 'iso-2022-jp-3'
 	endif
-	" fileencodings¤ò¹½ÃÛ
+	" fileencodingsã‚’æ§‹ç¯‰
 	if &encoding ==# 'utf-8'
 		let s:fileencodings_default = &fileencodings
 		let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
@@ -38,11 +38,11 @@ if has('iconv')
 			let &fileencodings = &fileencodings .','. s:enc_euc
 		endif
 	endif
-	" Äê¿ô¤ò½èÊ¬
+	" å®šæ•°ã‚’å‡¦åˆ†
 	unlet s:enc_euc
 	unlet s:enc_jis
 endif
-" ÆüËÜ¸ì¤ò´Ş¤Ş¤Ê¤¤¾ì¹ç¤Ï fileencoding ¤Ë encoding ¤ò»È¤¦¤è¤¦¤Ë¤¹¤ë
+" æ—¥æœ¬èªã‚’å«ã¾ãªã„å ´åˆã¯ fileencoding ã« encoding ã‚’ä½¿ã†ã‚ˆã†ã«ã™ã‚‹
 if has('autocmd')
 	function! AU_ReCheck_FENC()
 		if &fileencoding =~# 'iso-2022-jp' && search("[^\x01-\x7e]", 'n') == 0
@@ -51,19 +51,19 @@ if has('autocmd')
 	endfunction
 	autocmd BufReadPost * call AU_ReCheck_FENC()
 endif
-" ²ş¹Ô¥³¡¼¥É¤Î¼«Æ°Ç§¼±
+" æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã®è‡ªå‹•èªè­˜
 set fileformats=unix,dos,mac
-" ¢¢¤È¤«¡û¤ÎÊ¸»ú¤¬¤¢¤Ã¤Æ¤â¥«¡¼¥½¥ë°ÌÃÖ¤¬¤º¤ì¤Ê¤¤¤è¤¦¤Ë¤¹¤ë
+" â–¡ã¨ã‹â—‹ã®æ–‡å­—ãŒã‚ã£ã¦ã‚‚ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ãŒãšã‚Œãªã„ã‚ˆã†ã«ã™ã‚‹
 if exists('&ambiwidth')
 	set ambiwidth=double
 endif
 
 "-----------------------------------------------------------------------------
-" ÊÔ½¸´ØÏ¢
+" ç·¨é›†é–¢é€£
 "
-"¥ª¡¼¥È¥¤¥ó¥Ç¥ó¥È¤¹¤ë
+"ã‚ªãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã™ã‚‹
 set autoindent
-"¥Ğ¥¤¥Ê¥êÊÔ½¸(xxd)¥â¡¼¥É¡Êvim -b ¤Ç¤Îµ¯Æ°¡¢¤â¤·¤¯¤Ï *.bin ¤ÇÈ¯Æ°¤·¤Ş¤¹¡Ë
+"ãƒã‚¤ãƒŠãƒªç·¨é›†(xxd)ãƒ¢ãƒ¼ãƒ‰ï¼ˆvim -b ã§ã®èµ·å‹•ã€ã‚‚ã—ãã¯ *.bin ã§ç™ºå‹•ã—ã¾ã™ï¼‰
 augroup BinaryXXD
 	autocmd!
 	autocmd BufReadPre  *.bin let &binary =1
@@ -75,104 +75,91 @@ augroup BinaryXXD
 augroup END
 
 "-----------------------------------------------------------------------------
-" ¸¡º÷´ØÏ¢
+" æ¤œç´¢é–¢é€£
 "
-"¸¡º÷Ê¸»úÎó¤¬¾®Ê¸»ú¤Î¾ì¹ç¤ÏÂçÊ¸»ú¾®Ê¸»ú¤ò¶èÊÌ¤Ê¤¯¸¡º÷¤¹¤ë
+"æ¤œç´¢æ–‡å­—åˆ—ãŒå°æ–‡å­—ã®å ´åˆã¯å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ãªãæ¤œç´¢ã™ã‚‹
 set ignorecase
-"¸¡º÷Ê¸»úÎó¤ËÂçÊ¸»ú¤¬´Ş¤Ş¤ì¤Æ¤¤¤ë¾ì¹ç¤Ï¶èÊÌ¤·¤Æ¸¡º÷¤¹¤ë
+"æ¤œç´¢æ–‡å­—åˆ—ã«å¤§æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹å ´åˆã¯åŒºåˆ¥ã—ã¦æ¤œç´¢ã™ã‚‹
 set smartcase
-"¸¡º÷»ş¤ËºÇ¸å¤Ş¤Ç¹Ô¤Ã¤¿¤éºÇ½é¤ËÌá¤ë
+"æ¤œç´¢æ™‚ã«æœ€å¾Œã¾ã§è¡Œã£ãŸã‚‰æœ€åˆã«æˆ»ã‚‹
 set wrapscan
-"¸¡º÷Ê¸»úÎóÆşÎÏ»ş¤Ë½ç¼¡ÂĞ¾İÊ¸»úÎó¤Ë¥Ò¥Ã¥È¤µ¤»¤Ê¤¤
+"æ¤œç´¢æ–‡å­—åˆ—å…¥åŠ›æ™‚ã«é †æ¬¡å¯¾è±¡æ–‡å­—åˆ—ã«ãƒ’ãƒƒãƒˆã•ã›ãªã„
 set noincsearch
 
 "-----------------------------------------------------------------------------
-" Áõ¾ş´ØÏ¢
+" è£…é£¾é–¢é€£
 "
 " http://winterdom.com/2008/08/molokaiforvim
 set bg=dark
 set t_Co=256
 let g:molokai_original=1
 colorscheme molokai
-" ¥¹¥¯¥ê¥×¥È¼Â¹ÔÃæ¤Ë²èÌÌ¤òÉÁ²è¤·¤Ê¤¤
+" ã‚¹ã‚¯ãƒªãƒ—ãƒˆå®Ÿè¡Œä¸­ã«ç”»é¢ã‚’æç”»ã—ãªã„
 set lazyredraw
-"¥·¥ó¥¿¥Ã¥¯¥¹¥Ï¥¤¥é¥¤¥È¤òÍ­¸ú¤Ë¤¹¤ë
+"ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚’æœ‰åŠ¹ã«ã™ã‚‹
 if has("syntax")
 	syntax on
 endif
-"¥«¡¼¥½¥ë¹Ô¤Ë²¼Àş¤òÉ½¼¨
+"ã‚«ãƒ¼ã‚½ãƒ«è¡Œã«ä¸‹ç·šã‚’è¡¨ç¤º
 set cursorline
-"¹ÔÈÖ¹æ¤òÉ½¼¨¤·¤Ê¤¤
+"è¡Œç•ªå·ã‚’è¡¨ç¤ºã—ãªã„
 set nonumber
-"¥¿¥Ö¤Îº¸Â¦¤Ë¥«¡¼¥½¥ëÉ½¼¨
+"ã‚¿ãƒ–ã®å·¦å´ã«ã‚«ãƒ¼ã‚½ãƒ«è¡¨ç¤º
 set listchars=tab:\ \ 
 set list
-"¥¿¥ÖÉı¤òÀßÄê¤¹¤ë
+"ã‚¿ãƒ–å¹…ã‚’è¨­å®šã™ã‚‹
 set tabstop=4
 set shiftwidth=4
-"ÆşÎÏÃæ¤Î¥³¥Ş¥ó¥É¤ò¥¹¥Æ¡¼¥¿¥¹¤ËÉ½¼¨¤¹¤ë
+"å…¥åŠ›ä¸­ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã«è¡¨ç¤ºã™ã‚‹
 set showcmd
-"³ç¸ÌÆşÎÏ»ş¤ÎÂĞ±ş¤¹¤ë³ç¸Ì¤òÉ½¼¨
+"æ‹¬å¼§å…¥åŠ›æ™‚ã®å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’è¡¨ç¤º
 set showmatch
-"¸¡º÷·ë²ÌÊ¸»úÎó¤Î¥Ï¥¤¥é¥¤¥È¤òÍ­¸ú¤Ë¤¹¤ë
+"æ¤œç´¢çµæœæ–‡å­—åˆ—ã®ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚’æœ‰åŠ¹ã«ã™ã‚‹
 set hlsearch
-"¥¹¥Æ¡¼¥¿¥¹¥é¥¤¥ó¤ò¾ï¤ËÉ½¼¨
+"ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã‚’å¸¸ã«è¡¨ç¤º
 set laststatus=2
-"¥¹¥Æ¡¼¥¿¥¹¥é¥¤¥ó¤ËÊ¸»ú¥³¡¼¥É¤È²ş¹ÔÊ¸»ú¤òÉ½¼¨¤¹¤ë
+"ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã«æ–‡å­—ã‚³ãƒ¼ãƒ‰ã¨æ”¹è¡Œæ–‡å­—ã‚’è¡¨ç¤ºã™ã‚‹
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-"¹ÔËö¤Î¥¹¥Ú¡¼¥¹¤ò¶¯Ä´É½¼¨
+"è¡Œæœ«ã®ã‚¹ãƒšãƒ¼ã‚¹ã‚’å¼·èª¿è¡¨ç¤º
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 autocmd WinEnter * match WhitespaceEOL /\s\+$/
 
 "-----------------------------------------------------------------------------
-" ¥Ş¥Ã¥×ÄêµÁ
+" ãƒãƒƒãƒ—å®šç¾©
 "
-"¥Ğ¥Ã¥Õ¥¡°ÜÆ°ÍÑ¥­¡¼¥Ş¥Ã¥×
-" F2: Á°¤Î¥Ğ¥Ã¥Õ¥¡
-" F3: ¼¡¤Î¥Ğ¥Ã¥Õ¥¡
-" F4: ¥Ğ¥Ã¥Õ¥¡ºï½ü
-map <F2> <ESC>:bp<CR>
-map <F3> <ESC>:bn<CR>
-map <F4> <ESC>:bw<CR>
-"É½¼¨¹ÔÃ±°Ì¤Ç¹Ô°ÜÆ°¤¹¤ë
+"è¡¨ç¤ºè¡Œå˜ä½ã§è¡Œç§»å‹•ã™ã‚‹
 nnoremap j gj
 nnoremap k gk
-"¥Õ¥ì¡¼¥à¥µ¥¤¥º¤òÂÕÂÆ¤ËÊÑ¹¹¤¹¤ë
-map <kPlus> <C-W>+
-map <kMinus> <C-W>-
-"Gtags 
-"½àÈ÷
-"map <C-g> :Gtags
-"³«¤¤¤Æ¤¤¤ë¥Õ¥¡¥¤¥ë¤ËÄêµÁ¤µ¤ì¤Æ¤¤¤ë´Ø¿ô¤Î°ìÍ÷¤òÉ½¼¨
-"map <C-i> :Gtags -f %<CR>
-"¸½ºß¥«¡¼¥½¥ë¤¬¤¢¤ë°ÌÃÖ¤Î´Ø¿ô¤Ø¥¸¥ã¥ó¥×
-"map <C-j> :GtagsCursor<CR>
-"¼¡¤Î¸¡º÷·ë²Ì
-"map <C-n> :cn<CR>
-"Á°¤Î¸¡º÷·ë²Ì
-"map <C-p> :cp<CR>
-"¸¡º÷·ë²ÌWindow¤òÊÄ¤¸¤ë
-"map <C-q> <C-w><C-w><C-w>q
-"----------------------------------------------------
-" GNU GLOBAL(gtags)
-"----------------------------------------------------
-" ¸¡º÷·ë²ÌWindow¤òÊÄ¤¸¤ë
-nnoremap <C-q> <C-w><C-w><C-w>q
-" Grep ½àÈ÷
-nnoremap <C-g> :Gtags -g
-" ¤³¤Î¥Õ¥¡¥¤¥ë¤Î´Ø¿ô°ìÍ÷
-nnoremap <C-l> :Gtags -f %<CR>
-" ¥«¡¼¥½¥ë°Ê²¼¤ÎÄêµÁ¸µ¤òÃµ¤¹
-nnoremap <C-j> :Gtags <C-r><C-w><CR>
-" ¥«¡¼¥½¥ë°Ê²¼¤Î»ÈÍÑ²Õ½ê¤òÃµ¤¹
-nnoremap <C-k> :Gtags -r <C-r><C-w><CR>
-" ¼¡¤Î¸¡º÷·ë²Ì
-nnoremap <C-n> :cn<CR>
-" Á°¤Î¸¡º÷·ë²Ì
-nnoremap <C-p> :cp<CR>
 
-"screen¤Îstatus line¤Îtitle¤òvim¤ÎbufEnter¥Õ¥Ã¥¯¤Ç¸½ºßÊÔ½¸Ãæ¤Î¥Ğ¥Ã¥Õ¥¡Ì¾¤Ë¤¹¤ë
+" Unite ç”¨ãƒãƒƒãƒ”ãƒ³ã‚°
+" http://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+" å›è»¢
+nnoremap sr <C-w>r
+" ç¸¦æ¨ªæœ€å¤§åŒ–
+nnoremap so <C-w>_<C-w>|
+" å¤§ãã•ã‚’æƒãˆã‚‹
+nnoremap sO <C-w>=
+" æ°´å¹³åˆ†å‰²
+nnoremap ss :<C-u>sp<CR>
+" å‚ç›´åˆ†å‰²
+nnoremap sv :<C-u>vs<CR>
+" ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã‚‹
+nnoremap sq :<C-u>q<CR>
+" ãƒãƒƒãƒ•ã‚¡ã‚’é–‰ã˜ã‚‹
+nnoremap sQ :<C-u>bd<CR>
+
+
+"screenã®status lineã®titleã‚’vimã®bufEnterãƒ•ãƒƒã‚¯ã§ç¾åœ¨ç·¨é›†ä¸­ã®ãƒãƒƒãƒ•ã‚¡åã«ã™ã‚‹
 "http://d.hatena.ne.jp/ysano2005/20061118/1163829796
 function SetScreenTabName(name)
   let arg = 'k' . a:name . '\\'
@@ -195,17 +182,17 @@ let g:yanktmp_file = $HOME . '/tmp/yanktmp'
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-"¥«¡¼¥½¥ë¤¬¤¢¤ë¼¡¤Î¹Ô¤Ëerror_log¤òÆş¤ì¤ë
+"ã‚«ãƒ¼ã‚½ãƒ«ãŒã‚ã‚‹æ¬¡ã®è¡Œã«error_logã‚’å…¥ã‚Œã‚‹
 nmap <C-e><C-r> :r ~/error_log.php<CR>
-"¸½ºßÊÔ½¸¤·¤Æ¤¤¤ë¥Õ¥¡¥¤¥ë¤Î¥Õ¥ë¥Ñ¥¹¤òÉ½¼¨
+"ç¾åœ¨ç·¨é›†ã—ã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ•ãƒ«ãƒ‘ã‚¹ã‚’è¡¨ç¤º
 nmap <C-p><C-w><C-d> :echo expand("%:p")<CR> 
 
 " VCSCommand
 noremap <Space>s <C-w>o:VCSVimDiff<CR><C-w>p<
-"<Leader>dq¤ÇDiff¤«¤éÈ´¤±¤ë
+"<Leader>dqã§Diffã‹ã‚‰æŠœã‘ã‚‹
 noremap <Space>q :winc l<CR>:bw<CR>:diffoff<CR>
 
-"¹Ô¤òÁªÂò¤·¤Æ¤¤¤ë´Ö¡¢Tab¥­¡¼¤Ï¡Ö¹ÔÆ¬¤Î¥¿¥Ö¤Ø¤ÎÃÖ´¹+ÁªÂòÈÏ°Ï¤òÉü³è¡×¤È¤¤¤¦°ÕÌ£
+"è¡Œã‚’é¸æŠã—ã¦ã„ã‚‹é–“ã€Tabã‚­ãƒ¼ã¯ã€Œè¡Œé ­ã®ã‚¿ãƒ–ã¸ã®ç½®æ›+é¸æŠç¯„å›²ã‚’å¾©æ´»ã€ã¨ã„ã†æ„å‘³
 vmap <Tab> :s/^/\t/<CR>gv
 vmap <S-Tab> :s/^\t//<CR>gv
 
@@ -221,32 +208,32 @@ map tc :tabnew<CR>
 map td :tabclose<CR>
 
 """ Unite.vim
-" µ¯Æ°»ş¤Ë¥¤¥ó¥µ¡¼¥È¥â¡¼¥É¤Ç³«»Ï
+" èµ·å‹•æ™‚ã«ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã§é–‹å§‹
 let g:unite_enable_start_insert = 1
 
-" ¥¤¥ó¥µ¡¼¥È¡¿¥Î¡¼¥Ş¥ë¤É¤Á¤é¤«¤é¤Ç¤â¸Æ¤Ó½Ğ¤»¤ë¤è¤¦¤Ë¥­¡¼¥Ş¥Ã¥×
+" ã‚¤ãƒ³ã‚µãƒ¼ãƒˆï¼ãƒãƒ¼ãƒãƒ«ã©ã¡ã‚‰ã‹ã‚‰ã§ã‚‚å‘¼ã³å‡ºã›ã‚‹ã‚ˆã†ã«ã‚­ãƒ¼ãƒãƒƒãƒ—
 "nnoremap <silent> <C-f> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 "inoremap <silent> <C-f> <ESC>:<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 "nnoremap <silent> <C-b> :<C-u>Unite buffer file_mru<CR>
 "inoremap <silent> <C-b> <ESC>:<C-u>Unite buffer file_mru<CR>
 
-" ¥Ğ¥Ã¥Õ¥¡°ìÍ÷
+" ãƒãƒƒãƒ•ã‚¡ä¸€è¦§
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-" ¥Õ¥¡¥¤¥ë°ìÍ÷
+" ãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" ¥ì¥¸¥¹¥¿°ìÍ÷
+" ãƒ¬ã‚¸ã‚¹ã‚¿ä¸€è¦§
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-" ºÇ¶á»ÈÍÑ¤·¤¿¥Õ¥¡¥¤¥ë°ìÍ÷
+" æœ€è¿‘ä½¿ç”¨ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-" Á´Éô¾è¤»
+" å…¨éƒ¨ä¹—ã›
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
-" unite.vim¾å¤Ç¤Î¥­¡¼¥Ş¥Ã¥Ô¥ó¥°
+" unite.vimä¸Šã§ã®ã‚­ãƒ¼ãƒãƒƒãƒ”ãƒ³ã‚°
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
-  " Ã±¸ìÃ±°Ì¤«¤é¥Ñ¥¹Ã±°Ì¤Çºï½ü¤¹¤ë¤è¤¦¤ËÊÑ¹¹(vsp¤·¤Æ¤ë¤È¤­¤Ï¥³¥ó¥Õ¥ê¥¯¥È¤¹¤ë...)
+  " å˜èªå˜ä½ã‹ã‚‰ãƒ‘ã‚¹å˜ä½ã§å‰Šé™¤ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´(vspã—ã¦ã‚‹ã¨ãã¯ã‚³ãƒ³ãƒ•ãƒªã‚¯ãƒˆã™ã‚‹...)
   imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-  " ESC¥­¡¼¤ò2²ó²¡¤¹¤È½ªÎ»¤¹¤ë
+  " ESCã‚­ãƒ¼ã‚’2å›æŠ¼ã™ã¨çµ‚äº†ã™ã‚‹
   nmap <silent><buffer> <ESC><ESC> q
   imap <silent><buffer> <ESC><ESC> <ESC>q
 endfunction
