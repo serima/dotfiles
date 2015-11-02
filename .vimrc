@@ -273,6 +273,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'rtakasuke/yanktmp.vim'
 NeoBundle 'grep.vim'
+NeoBundle 'rhysd/committia.vim'
 
 call neobundle#end()
 
