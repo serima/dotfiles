@@ -111,5 +111,5 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"'
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
