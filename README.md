@@ -77,6 +77,9 @@
 * VirtualBox
 * Vagrant
 * Sequel Pro
+* Spectacle
+* Near Lock
+* Get Plain Text
 
 ## Software settings
 
