@@ -199,6 +199,14 @@ $ screen -v
 Screen version 4.03.00 (GNU) 27-May-15
 ```
 
+### Install byobu
+
+```
+$ brew install byobu
+```
+
+* See also http://byobu.co
+
 ### Install Ricty
 
 ```
