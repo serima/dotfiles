@@ -187,6 +187,7 @@ $ git config --global ghq.root ~/src
 ```
 
 * See also http://qiita.com/ysk_1031/items/8cde9ce8b4d0870a129d
+* Super alias is http://qiita.com/itkrt2y/items/0671d1f48e66f21241e2
 
 ### Install screen
 
