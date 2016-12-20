@@ -63,6 +63,7 @@
 * Growl
 * CotEditor
 * Get Plain Text
+* Bear
 
 ### via Browser
 
