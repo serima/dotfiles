@@ -82,6 +82,8 @@
 * Spectacle
 * Near Lock
 * Get Plain Text
+* Marp
+* Shift
 
 ## Software settings
 
