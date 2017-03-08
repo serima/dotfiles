@@ -33,7 +33,7 @@
 
 ## Change Dock Position
 
-* システム環境設定 -> Dock -> 画面上の位置 : 左
+* システム環境設定 -> Dock -> 画面上の位置 : 右
 * システム環境設定 -> Dock -> Dock を自動的に隠す／表示
 
 ## Setting Hot Corner
