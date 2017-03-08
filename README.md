@@ -57,7 +57,6 @@
 
 * Xcode
 * Slack
-* Evernote
 * The Unarchiver
 * Skitch
 * Growl
@@ -69,7 +68,6 @@
 
 * GoogleChrome
 * Alfred
-* MacDown
 * iTerm2
 * MacZip4Win
 * Karabiner
