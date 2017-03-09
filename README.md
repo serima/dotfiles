@@ -44,6 +44,15 @@
 
 * Spotlight は使用しないので、すべてチェックを外す
 
+## Setting Keyrepeat
+
+```
+$ defaults write -g InitialKeyRepeat -int 10
+$ defaults write -g KeyRepeat -int 3
+```
+
+その後、再起動する。
+
 ## Install
 
 ### via App Store
@@ -82,6 +91,7 @@
 * Get Plain Text
 * Marp
 * Shift
+* ⌘英かな
 
 ## Software settings
 
@@ -104,13 +114,9 @@
 * `j02521` としてログインすることで拡張機能や履歴などが同期される
 * 環境設定 -> ダウンロード保存先をデスクトップに変更
 
-### Karabiner
+### ⌘英かな
 
-* Preference -> Change Key
-	* コマンドキーの動作を優先モード（★おすすめ）のチェックをオンに
-* Key Repeat
-	* Delay Until Repeat : 200ms
-	* Key Rpeat : 15ms
+* ログイン後にこのアプリを起動
 
 ### iTerm2
 
