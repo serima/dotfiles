@@ -71,6 +71,8 @@ alias scrr='screen -r'
 alias scrd='screen -d'
 alias scr='screen'
 alias vi='vim'
+alias g='cd $(ghq root)/$(ghq list | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
