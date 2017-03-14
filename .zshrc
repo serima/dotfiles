@@ -1,25 +1,25 @@
 autoload -U compinit; compinit
 bindkey -e
 
-# ʣ���� zsh ��Ʊ���˻Ȥ����ʤ� history �ե�����˾�񤭤����ɲä���
+# 複数の zsh を同時に使う時など history ファイルに上書きせず追加する
 setopt append_history
 
-# ���ꤷ�����ޥ��̾���ʤ����ǥ��쥯�ȥ�̾�Ȱ��פ������ cd ����
+# 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
 setopt auto_cd
 
-# 8 �ӥå��ܤ��̤��褦�ˤʤꡢ���ܸ�Υե�����̾�ʤɤ򸫤��褦�ˤʤ�
+# 8 ビット目を通すようになり、日本語のファイル名などを見れるようになる
 setopt print_eightbit
 
-# ���ޥ�ɥ饤��ΰ����� --prefix=/usr �ʤɤ� = �ʹߤǤ��䴰�Ǥ���
+# コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 setopt magic_equal_subst
 
-# ����ͤ� 0 �ʳ��ξ�罪λ�����ɤ�ɽ������
+# 戻り値が 0 以外の場合終了コードを表示する
 setopt print_exit_value
 
-# rm * �ʤɤκݡ����������ƤΥե������ä����ɤ����γ�ǧ���ʤ��褦�ˤʤ�
+# rm * などの際、本当に全てのファイルを消して良いかの確認しないようになる
 setopt rm_star_silent
 
-# �ե�����̾�� #, ~, ^ �� 3 ʸ��������ɽ���Ȥ��ư���
+# ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
 setopt extended_glob
 
 # ramdom prompt
@@ -36,7 +36,7 @@ if [ "$TERM" = "screen" ]; then
 	#RPROMPT=${RandomColor}${RPROMPT}${Default}
 fi
 
-# �Ǹ�˼¹Ԥ������ޥ�ɤ� screen �Υ����ȥ��ɽ������
+# 最後に実行したコマンドを screen のタイトルに表示する
 if [ "$TERM" = "screen" ]; then
 	local -a host; host=`/bin/hostname -s`
 	preexec() {

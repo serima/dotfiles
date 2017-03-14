@@ -189,10 +189,7 @@ $ brew install q
 ### Install ghq + peco
 
 ```
-$ brew tap peco/peco
 $ brew install peco
-
-$ brew tap motemen/ghq
 $ brew install ghq
 
 $ git config --global ghq.root ~/src
@@ -221,6 +218,8 @@ $ brew install ssh-copy-id
 $ brew tap sanemat/font
 $ brew install Caskroom/cask/xquartz
 $ brew install ricty
+$ cp -f /usr/local/Cellar/ricty/4.1.0_2/share/fonts/Ricty*.ttf ~/Library/Fonts/
+$ fc-cache -vf
 ```
 
 #### for external display
