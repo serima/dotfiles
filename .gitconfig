@@ -43,3 +43,5 @@
 	singlekey = true
 [ghq]
 	root = ~/src
+[credential]
+	helper = osxkeychain
