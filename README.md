@@ -141,6 +141,11 @@ $ defaults write -g KeyRepeat -int 3
 ```
 $ mkdir ~/.ssh
 $ mv ~/Desktop/id_rsa* ~/.ssh
+
+### GitHub のアクセストークン設定
+
+* 二段階認証設定済みなので、https 経由で pull/push できるように設定を行う必要がある
+* See : http://qiita.com/usamik26/items/c655abcaeee02ea59695
 ```
 
 ### Xcode
