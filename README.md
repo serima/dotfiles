@@ -125,6 +125,7 @@ $ defaults write -g KeyRepeat -int 3
 * Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
 * Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
 * Preference -> Terminal -> Notifications -> Scilence bell をオンに
+* Preference -> General -> Native full screen windows をオフに
 
 ### PHPStorm
 
