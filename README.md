@@ -76,6 +76,7 @@ $ defaults write -g KeyRepeat -int 3
 ### via Browser
 
 * GoogleChrome
+* Fluid
 * Alfred
 * iTerm2
 * MacZip4Win
