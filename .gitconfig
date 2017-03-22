@@ -12,7 +12,7 @@
     path = ~/.gitconfig_local
 [push]
     # simple,matching,upstream,current
-    default = simple
+	default = current
 [color]
     ui = auto
     status = auto
