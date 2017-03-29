@@ -206,13 +206,14 @@ $ git config --global ghq.root ~/src
 $ brew install byobu
 ```
 
+* See also http://byobu.co
+* F9 を押しても config が開かない場合、 http://qiita.com/kotatsu360/items/fdb2a09be7ed115bc69c を参照
+
 ### Install ssh-copy-id
 
 ```
 $ brew install ssh-copy-id
 ```
-
-* See also http://byobu.co
 
 ### Install Ricty
 
