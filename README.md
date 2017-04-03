@@ -93,6 +93,7 @@ $ defaults write -g KeyRepeat -int 3
 * Marp
 * Shift
 * ⌘英かな
+* Stay
 
 ## Software settings
 
