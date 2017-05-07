@@ -209,6 +209,7 @@ $ brew install byobu
 
 * See also http://byobu.co
 * F9 を押しても config が開かない場合、 http://qiita.com/kotatsu360/items/fdb2a09be7ed115bc69c を参照
+* config から、Change escape sequence -> `Ctrl + t` に変更
 
 ### Install ssh-copy-id
 
