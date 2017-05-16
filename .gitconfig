@@ -20,6 +20,11 @@
     branch = auto
     interactive = auto
     grep = auto
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = magenta
+	deleted = red
 [diff]
     patience = true
 [help]
