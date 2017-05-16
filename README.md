@@ -93,6 +93,7 @@ $ defaults write -g KeyRepeat -int 3
 * Marp
 * Shift
 * ⌘英かな
+* Stay
 
 ## Software settings
 
@@ -125,6 +126,7 @@ $ defaults write -g KeyRepeat -int 3
 * Preference -> Profiles -> Text -> Regular Font -> Ricty 12pt (Anti-aliased)
 * Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
 * Preference -> Terminal -> Notifications -> Scilence bell をオンに
+* Preference -> General -> Native full screen windows をオフに
 
 ### PHPStorm
 
@@ -205,13 +207,15 @@ $ git config --global ghq.root ~/src
 $ brew install byobu
 ```
 
+* See also http://byobu.co
+* F9 を押しても config が開かない場合、 http://qiita.com/kotatsu360/items/fdb2a09be7ed115bc69c を参照
+* config から、Change escape sequence -> `Ctrl + t` に変更
+
 ### Install ssh-copy-id
 
 ```
 $ brew install ssh-copy-id
 ```
-
-* See also http://byobu.co
 
 ### Install Ricty
 
