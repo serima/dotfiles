@@ -112,9 +112,3 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# nodebrew
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
