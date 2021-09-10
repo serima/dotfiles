@@ -1,14 +1,14 @@
 # Got a new Macbook!
+
 ## Connect Hardware
 
 1. Connect bluetooth mouse (Logicool M305)
 2. Setting Keyboard
-	1. システム環境設定 -> キーボード -> Bluetooth キーボードを設定
-	2. 修飾キー
-		* Internal Keyboard と Bluetooth キーボードどちらに関しても
+	1. 修飾キー
+		* 全てのキーボードに関して
 			* Caps Lock キー を Control に割り当てる
 			* Control キー を Caps Lock に割り当てる
-	3. ショートカット
+	2. ショートカット
 		* 入力ソース
 			* 前の入力ソースを選択、入力メニューの次のソースを選択のチェックを外す
 		* Spotlight
@@ -64,36 +64,21 @@ $ defaults write -g KeyRepeat -int 3
 
 #### Install Software
 
-* Xcode
 * Slack
-* The Unarchiver
 * Skitch
-* Growl
 * CotEditor
 * Get Plain Text
-* Bear
 
 ### via Browser
 
-* GoogleChrome
-* Fluid
+* Google Chrome
 * Alfred
 * iTerm2
-* MacZip4Win
-* Karabiner
+* Karabiner-Elements
 * Google 日本語入力
-* PHPStorm
-* BetterTouchTool
-* VirtualBox
-* Vagrant
 * Sequel Pro
 * Spectacle
-* Near Lock
-* Get Plain Text
-* Marp
-* Shift
-* ⌘英かな
-* Stay
+* Notion
 
 ## Software settings
 
@@ -102,23 +87,14 @@ $ defaults write -g KeyRepeat -int 3
 * 環境設定 -> 一般 -> 新規 Finder ウィンドウで次を表示を変更
 * 環境設定 -> サイドバー -> r_shibayama などホームディレクトリを表示するように変更
 
-### BetterTouchTool
-
-* Basic Settings -> Launch BetterTouchTool on startup
-* http://ryomac.blog.fc2.com/blog-entry-89.html
-
 ### Alfred
 
 * Hotkey を Cmd + Space に変更
 
-### GoogleChrome
+### Google Chrome
 
 * `j02521` としてログインすることで拡張機能や履歴などが同期される
 * 環境設定 -> ダウンロード保存先をデスクトップに変更
-
-### ⌘英かな
-
-* ログイン後にこのアプリを起動
 
 ### iTerm2
 
@@ -127,15 +103,6 @@ $ defaults write -g KeyRepeat -int 3
 * Preference -> Profiles -> Text -> Double-Width Characters -> Treat ambiguous-width characters as double width をオンに
 * Preference -> Terminal -> Notifications -> Scilence bell をオンに
 * Preference -> General -> Native full screen windows をオフに
-
-### PHPStorm
-
-* Preference -> Appearance & Behavior -> Appearance -> UI Options -> Theme: Darcula
-* Preference -> Editor -> Colors & Fonts -> Font -> Scheme
-	* Monokai を Save As して Monokai Copy にする
-	* Primary font を Ricty に変更
-* Preference -> Plugins -> IdeaVIM
-* Preference -> Editor -> Appearance -> Show line numbers をオンに
 
 ## Setup Development Environment
 
@@ -149,16 +116,6 @@ $ mv ~/Desktop/id_rsa* ~/.ssh
 
 * 二段階認証設定済みなので、https 経由で pull/push できるように設定を行う必要がある
 * See : http://qiita.com/usamik26/items/c655abcaeee02ea59695
-```
-
-### Xcode
-
-* 起動させ、Agree だけしておく
-
-### Install Command Line Tools
-
-```
-$ xcode-select --install
 ```
 
 ### Install Homebrew
@@ -181,14 +138,6 @@ $ brew install zsh
 $ brew install go
 ```
 
-### Install q
-
-```
-$ brew install q
-```
-
-* `.zshrc` に `GOPATH=~` と定義してある
-
 ### Install ghq + peco
 
 ```
@@ -201,16 +150,6 @@ $ git config --global ghq.root ~/src
 * See also http://qiita.com/ysk_1031/items/8cde9ce8b4d0870a129d
 * Super alias is http://qiita.com/itkrt2y/items/0671d1f48e66f21241e2
 
-### Install byobu
-
-```
-$ brew install byobu
-```
-
-* See also http://byobu.co
-* F9 を押しても config が開かない場合、 http://qiita.com/kotatsu360/items/fdb2a09be7ed115bc69c を参照
-* config から、Change escape sequence -> `Ctrl + t` に変更
-
 ### Install ssh-copy-id
 
 ```
@@ -219,18 +158,14 @@ $ brew install ssh-copy-id
 
 ### Install Ricty
 
+https://rictyfonts.github.io/
+
 ```
 $ brew tap sanemat/font
 $ brew install Caskroom/cask/xquartz
 $ brew install ricty
 $ cp -f /usr/local/Cellar/ricty/4.1.0_2/share/fonts/Ricty*.ttf ~/Library/Fonts/
 $ fc-cache -vf
-```
-
-#### for external display
-
-```
-$ defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
 ```
 
 ### dotfiles
