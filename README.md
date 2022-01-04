@@ -33,8 +33,8 @@
 
 ## Change Dock Position
 
-* システム環境設定 -> Dock -> 画面上の位置 : 右
-* システム環境設定 -> Dock -> Dock を自動的に隠す／表示
+* システム環境設定 -> Dock とメニューバー -> 画面上の位置 : 右
+* システム環境設定 -> Dock とメニューバー -> Dock を自動的に表示/非表示にチェックを入れる
 
 ## Setting Hot Corner
 
@@ -58,6 +58,7 @@ $ defaults write -g KeyRepeat -int 3
 ### via App Store
 
 #### 事前準備
+
 * `r.shibayama@gmail.com` でログイン
 * 利用可能なソフトウェアアップデートを行う
 * 自動アップデートを入にする
@@ -76,9 +77,9 @@ $ defaults write -g KeyRepeat -int 3
 * iTerm2
 * Karabiner-Elements
 * Google 日本語入力
-* Sequel Pro
-* Spectacle
 * Notion
+* Visual Studio Code
+* Zoom
 
 ## Software settings
 
