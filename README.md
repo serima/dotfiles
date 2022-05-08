@@ -73,7 +73,7 @@ $ defaults write -g KeyRepeat -int 3
 ### via Browser
 
 * Google Chrome
-* Alfred
+* Raycast
 * iTerm2
 * Karabiner-Elements
 * Google 日本語入力
@@ -88,9 +88,10 @@ $ defaults write -g KeyRepeat -int 3
 * 環境設定 -> 一般 -> 新規 Finder ウィンドウで次を表示を変更
 * 環境設定 -> サイドバー -> r_shibayama などホームディレクトリを表示するように変更
 
-### Alfred
+### Raycast
 
 * Hotkey を Cmd + Space に変更
+* Google アカウント連携
 
 ### Google Chrome
 
